@@ -1,4 +1,4 @@
-# vue-scriptsetup-experience
+# vue script setup experience
 
 ## Project setup
 ```
