@@ -1,27 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <!-- <VModel :fatherProps="fatherContents" @childInputChange="fatherResponse"></VModel> -->
+  <VModel v-model="fatherContents"></VModel>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+<script setup lang="ts">
+import { ref } from 'vue'
+import VModel from './components/VModel.vue'
 
-export default defineComponent({
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-});
-</script>
+const fatherContents = ref("this is father's content")
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+const fatherResponse = (data: string) => {
+  console.log('father response the emit event, and the data is:', data)
+  fatherContents.value = data
 }
-</style>
+</script>
