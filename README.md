@@ -1,5 +1,7 @@
 # vue script setup experience
 
+这里记录了一些在使用vue script setup语法糖时的一些疑问和困惑，希望能帮到你
+
 ## Project setup
 ```
 yarn install
